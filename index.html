@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passgen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PassGen</h1>
+    <div class="box">
+        <h2>Random Password Generated</h2><br>
+        <p id="generatedPassword"></p>
+        <div class="inputs">
+            <label for="checkUppercase">
+                <input type="checkbox" id="checkUppercase"> Majuscule
+            </label>
+            <label for="checkNumbers">
+                <input type="checkbox" id="checkNumbers"> Numbers
+            </label>
+            <label for="checkSymbol">
+                <input type="checkbox" id="checkSymbol"> Symbols 
+            </label>
+            <label for="rangeLength">
+                <input type="range" name="" id="rangeLength" value="8" min="5" max="20" onchange="showRangeValue(this.value)"> Password Length <span id="rangeValue">8</span>
+            </label>
+            <button onclick="genPass()">generate</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
