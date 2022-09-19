@@ -1,7 +1,7 @@
 
 # GenPass 🔑
 
-GenPass il a simple password generator using JS. 
+GenPass il a simple password generator using JS. Bootstrap for UI.
 
 📌 Version: 1.0
 📌 Date: 16/09/2022
