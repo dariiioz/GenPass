@@ -1,6 +1,8 @@
 
 # GenPass 🔑
 
+You can use it here : [GenPass](https://www.genpass.cappelleaymeric.fr)
+
 GenPass is a simple password generator using JavaScript. Bootstrap for UI design. 
 
 📌 Version: 1.0
