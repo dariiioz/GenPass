@@ -49,6 +49,7 @@ table {
     background-color: rgb(233, 233, 237);
     padding: 5%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin-top: 10vh !important;
 }
 h1{
     text-align: center;
