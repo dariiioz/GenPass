@@ -6,7 +6,7 @@ function showRangeValue(value){
 function genPass(){
     let numbers = "0123456789";
     let defaultstring = "abcdefghijklmnpqrstuvwxyz";
-    let symbols = "@!";
+    let symbols = "@!=-#%$";
     let upper = "AZERTYUIPQSDFGHJKLMWXCVBN";
     let passLength = document.getElementById('rangeLength').value;
     const ifuppercase = document.querySelector('#checkUppercase');
