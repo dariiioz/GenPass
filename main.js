@@ -1,50 +1,62 @@
-function showRangeValue(value){
-     document.getElementById("rangeValue").innerText= `${value}`;
-     return console.log(value);
-}
-
-function genPass(){
-    let numbers = "0123456789";
-    let defaultstring = "abcdefghijklmnpqrstuvwxyz";
-    let symbols = "@!=-#%$";
-    let upper = "AZERTYUIPQSDFGHJKLMWXCVBN";
-    let passLength = document.getElementById('rangeLength').value;
-    const ifuppercase = document.querySelector('#checkUppercase');
-    const ifnumbers = document.querySelector('#checkNumbers');
-    const ifsymbols = document.querySelector('#checkSymbol');
-    let password = "";
-    let string = defaultstring;
-    let array = [ifuppercase, ifnumbers, ifsymbols];
-    let i = 0;
-    while(i < array.length){
-        if(array[i].checked == true){
-            value = array[i].value;
-            switch(value){
-                case 'upper':
-                    string = upper + string;
-                    break;
-                case 'numbers':
-                    string = numbers + string;
-                    break;
-                case 'symbols':
-                    string = symbols + string;
-                    break;
-            }
-        }
-        i++;
+//Function to generate secure password
+function generatePassword() {
+  //Get values from user input
+  var longueur = document.getElementById("rangeLength").value;
+  var majuscules = document.getElementById("checkUppercase").checked;
+  var minuscules = document.getElementById("checkLowercase").checked;
+  var chiffres = document.getElementById("checkNumbers").checked;
+  var caracteres = document.getElementById("checkSymbol").checked;
+  var password = "";
+  var caracterePossible = "";
+  //If user doesn't select any parameters, we alert him
+  if (
+    majuscules === false &&
+    minuscules === false &&
+    chiffres === false &&
+    caracteres === false
+  ) {
+    alert("Choose one parameters to generate password please !");
+  } else {
+    if (majuscules === true) {
+      caracterePossible += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
-    for (let i2 = 0; i2 < passLength; i2++) {
-        password += string[Math.floor(Math.random() * string.length)]
+    if (minuscules === true) {
+      caracterePossible += "abcdefghijklmnopqrstuvwxyz";
+    }
+    if (chiffres === true) {
+      caracterePossible += "0123456789";
+    }
+    if (caracteres === true) {
+      caracterePossible += "!@#$%/";
+    }
+    //Generate password
+    for (var i = 0; i < longueur; i++) {
+      password += caracterePossible.charAt(
+        Math.floor(Math.random() * caracterePossible.length)
+      );
+    }
+    //If user select symbol, we check if password contains symbol or we generate a new password
+    if (caracteres === true) {
+      while (password.match(/[^a-zA-Z0-9]/) === null) {
+        password = "";
+        for (var i = 0; i < longueur; i++) {
+          password += caracterePossible.charAt(
+            Math.floor(Math.random() * caracterePossible.length)
+          );
+        }
       }
-    document.getElementById('generatedPassword').value = `${password}`;
-    return console.log(password);
+    }
+    //On affiche le mot de passe
+    document.getElementById("generatedPassword").value = password;
+  }
 }
 
-function copyPass(){
-    const copyText = document.getElementById("generatedPassword");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-    alert("Copy password: " + copyText.value);
-    console.log('Copy password ! ');
+// Function to copy password
+function copyPass() {
+  const copyText = document.getElementById("generatedPassword");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copy password: " + copyText.value);
+  console.log("Copy password ! ");
 }

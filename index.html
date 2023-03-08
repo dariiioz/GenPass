@@ -25,7 +25,13 @@
             </div>
             <div class="mb-3">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" id="checkSymbol" type="checkbox" name="symbols" value="symbols" />
+                    <input checked class="form-check-input" id="checkLowercase" type="checkbox" name="checkLowercase" value="lowercase" />
+                    <label class="form-check-label" for="checkLowercase">lowercase</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input checked class="form-check-input" id="checkSymbol" type="checkbox" name="symbols" value="symbols" />
                     <label class="form-check-label" for="checkSymbol">Symbols</label>
                 </div>
             </div>
@@ -36,9 +42,9 @@
                 </div>
             </div>
             <label for="rangeLength" class="form-label">Password length : <span id="rangeValue">8</span></label>
-            <input type="range" class="form-range" id="rangeLength" value="8" min="5" max="20" onchange="showRangeValue(this.value)">
+            <input type="range" class="form-range" id="rangeLength" value="8" min="5" max="100" onchange="generatePassword()">
             <div class="d-grid">
-                <button class="btn btn-primary" id="submitButton" type="button" onclick="genPass()">Generate</button>
+                <button class="btn btn-primary" id="submitButton" type="button" onclick="generatePassword()">Generate</button>
             </div>
             <div class="d-grid">
                 <button class="btn btn-primary" id="submitButton" type="button" onclick="copyPass()">Copy password !</button>
