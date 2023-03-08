@@ -16,7 +16,7 @@ GenPass is a simple password generator using JavaScript and Bootstrap for UI des
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/26320684/190968058-cf9e88f0-3ce8-43dd-a370-d092c7ba643a.png)
+![image](https://user-images.githubusercontent.com/26320684/223683906-999378ce-c9bc-42b5-a501-bfafbecf9bf8.png)
 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://fr.linkedin.com/in/aymeric-cappelle-65a4a113a)
